@@ -8,7 +8,5 @@ public class Main {
         opponent.makeOpponentChoice();
         opponent.runTest();
 
-
-
     }
 }
