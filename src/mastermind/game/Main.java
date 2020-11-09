@@ -6,7 +6,7 @@ public class Main {
     {
         Opponent opponent = new Opponent();
         opponent.makeOpponentChoice();
-        opponent.runTest();
+        opponent.runOpponentTest();
 
     }
 }

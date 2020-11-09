@@ -23,14 +23,18 @@ public class Opponent
         return opponentPieces;
     }
 
+
+
     //Test method for Opponent bugfix
-    public void runTest()
+    public void runOpponentTest()
     {
         for (int i :getOpponentPieces())
         {
             System.out.print(" - " + i );
         }
         System.out.print(" - ");
+
+
     }
 
 }
