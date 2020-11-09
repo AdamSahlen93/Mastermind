@@ -32,7 +32,7 @@ public class Opponent
         {
             System.out.print(" - " + i );
         }
-        System.out.print(" - ");
+        System.out.println(" - ");
 
 
     }

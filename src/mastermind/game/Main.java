@@ -7,6 +7,9 @@ public class Main {
         Opponent opponent = new Opponent();
         opponent.makeOpponentChoice();
         opponent.runOpponentTest();
+        Player player = new Player();
+        player.makeGuess();
+        player.runPlayerTest();
 
     }
 }
