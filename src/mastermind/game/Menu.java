@@ -24,6 +24,16 @@ public class Menu
                 Player player = new Player();
                 player.makeGuess();
                 player.runPlayerTest();
+                int playerGuessOrNot = playerInput.nextInt();
+                switch(playerGuessOrNot)
+                {
+                    case 1:
+                        System.out.println("Point!");
+                        break;
+                    case 2:
+                        runMenu();
+                        break;
+                }
                 break;
             case 2:
                 System.out.println("-----Rules-----");
