@@ -33,8 +33,8 @@ public class Player extends ColourPieces
         }
     }
 
-    //Test method for Player bugfix
-    public void runPlayerTest()
+
+    public void playerContinueWithGuess()
     {
         System.out.println("\nAre you sure this is your next guess? | 1: YES | 2: NO |");
         for (String showPlayerColourGuesses : playerColourGuess)
@@ -44,5 +44,48 @@ public class Player extends ColourPieces
         System.out.println("\n");
     }
 
+    //Test method for Player bugfix
+    public void runFinishedGuessTest()
+    {
+        for (int showPlayerFinishedGuess: playerFinishedGuess)
+        {
+            System.out.print(showPlayerFinishedGuess + "|");
+        }
 
+        System.out.println("\n");
+    }
+
+    public void runPlayerColourGuessTest()
+    {
+        for (String showPlayerColourGuesses : playerColourGuess)
+        {
+            System.out.print(showPlayerColourGuesses + " | ");
+        }
+        System.out.println("\n");
+
+    }
+
+    public String[] getPlayerColourGuess()
+    {
+
+        return playerColourGuess;
+    }
+
+    public void setPlayerColourGuess(String[] playerColourGuess)
+    {
+
+        this.playerColourGuess = playerColourGuess;
+    }
+
+    public int[] getPlayerFinishedGuess()
+    {
+
+        return playerFinishedGuess;
+    }
+
+    public void setPlayerFinishedGuess(int[] playerFinishedGuess)
+    {
+
+        this.playerFinishedGuess = playerFinishedGuess;
+    }
 }

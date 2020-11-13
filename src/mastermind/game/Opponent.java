@@ -2,7 +2,7 @@ package mastermind.game;
 import java.util.concurrent.ThreadLocalRandom;
 
 
-public class Opponent
+public abstract class Opponent
 {
     //Array which will hold the random generated pieces of the Opponent
     private int [] opponentPieces = {0,0,0,0};
@@ -28,13 +28,14 @@ public class Opponent
     //Test method for Opponent bugfix
     public void runOpponentTest()
     {
+
+        System.out.println("\n");
         for (int i :getOpponentPieces())
         {
             System.out.print(" - " + i );
         }
         System.out.println(" - ");
-
-
+        System.out.println("\n");
     }
 
 }

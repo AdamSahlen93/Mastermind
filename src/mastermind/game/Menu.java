@@ -1,56 +1,48 @@
 package mastermind.game;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Menu
 {
-    //Attributes controlling the program/menu
-    boolean runProgram = true;
-    Scanner playerInput = new Scanner(System.in);
 
-    //Switch
-    public void runMenu()
+    public static void main(String[] args)
     {
 
-        System.out.println("-----Welcome to Mastermind-----\n1. Start a new game against the computer\n2. New to mastermind? - Read the rules here!\n3. Exit the program");
+    //Attributes controlling the program/menu
+    boolean runProgram = true;
 
-        int playerInputForMenu = playerInput.nextInt();
-        
+    while (runProgram)
+    {
+        Scanner playerMenuInput = new Scanner(System.in);
+        System.out.println("-----Welcome to Mastermind-----\n1. Start a new game against the computer\n2. New to mastermind? - Read the rules here!\n3. Exit the program");
+        int playerInputForMenu = playerMenuInput.nextInt();
+
         switch (playerInputForMenu)
         {
             case 1:
-                Opponent opponent = new Opponent();
-                opponent.makeOpponentChoice();
-                opponent.runOpponentTest();
-                Player player = new Player();
-                player.makeGuess();
-                player.runPlayerTest();
-                int playerGuessOrNot = playerInput.nextInt();
-                switch(playerGuessOrNot)
-                {
-                    case 1:
-                        System.out.println("Point!");
+                GameSystem gamesystem = new GameSystem();
+                gamesystem.startGame();
+            break;
+                case 2:
+                    Rules rules = new Rules();
+                    rules.runRules();
+                    System.out.println("To go back - Press 0");
+                    int playerRulesNavigator = playerMenuInput.nextInt();
+                    if (playerRulesNavigator == 0)
+                    {
                         break;
-                    case 2:
-                        runMenu();
+                    }
+                    else
+                    {
+                        System.out.println("Input error, returning to Main Menu");
+                    }
+                    break;
+                     case 3:
+                        runProgram = false;
                         break;
-                }
-                break;
-            case 2:
-                System.out.println("-----Rules-----");
-                System.out.println("To go back - Press 0");
-                int playerInputForRules = playerInput.nextInt();
-                if (playerInputForRules == 0)
-                {
-                      runMenu();
-                }
-                break;
-            case 3:
-                System.out.println("3");
-                break;
-            case 99:
-                runProgram = false;
-            default:
-
+                default:
+                    System.out.println("Input error, please try again!");
+            }
         }
     }
 

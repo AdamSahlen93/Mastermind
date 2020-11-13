@@ -1,7 +1,7 @@
 package mastermind.game;
 import java.util.LinkedList;
 
-public abstract class Points
+public class Points
 {
 
     //Point system rules
@@ -9,8 +9,10 @@ public abstract class Points
     private String correctPlacement = "I";
     private String correctColour = "II";
     private String[] pointsSheet = {"", "", "", ""};
+    private int [] playerSheetCopy;
 
     //Gives the player points based on the user input (their guess)
+
     public void addPointsForGuess()
     {
 
@@ -48,5 +50,19 @@ public abstract class Points
 
         this.pointsSheet = pointsSheet;
     }
+
+    public int[] getPlayerSheetCopy()
+    {
+
+        return playerSheetCopy;
+    }
+
+    public void setPlayerSheetCopy(int[] playerSheetCopy)
+    {
+
+        this.playerSheetCopy = playerSheetCopy;
+    }
+
+
 }
 
