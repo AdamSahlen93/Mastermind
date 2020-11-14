@@ -14,15 +14,15 @@ public class Menu
     while (runProgram)
     {
         Scanner playerMenuInput = new Scanner(System.in);
-        System.out.println("-----Welcome to Mastermind-----\n1. Start a new game against the computer\n2. New to mastermind? - Read the rules here!\n3. Exit the program");
+        System.out.println("\n-----Welcome to Mastermind-----\n1. Start a new game against the computer\n2. New to mastermind? - Read the rules here!\n3. Exit the program");
         int playerInputForMenu = playerMenuInput.nextInt();
 
         switch (playerInputForMenu)
         {
             case 1:
-                GameSystem gamesystem = new GameSystem();
-                gamesystem.startGame();
-            break;
+                    GameSystem gamesystem = new GameSystem();
+                    gamesystem.startGame();
+                    break;
                 case 2:
                     Rules rules = new Rules();
                     rules.runRules();

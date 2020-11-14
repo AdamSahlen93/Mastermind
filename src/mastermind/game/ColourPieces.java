@@ -33,12 +33,7 @@ abstract class ColourPieces
     //Printing out the sorted list to show the colour options with corresponding key
     public void showSortedPiecesList()
     {
+        System.out.print(sortedPiecesList.toString());
 
-        System.out.print("|  ");
-        for (String showSortedPiecesList : sortedPiecesList )
-        {
-            System.out.print(showSortedPiecesList + "  |  ");
-        }
-        System.out.println("\n");
     }
 }

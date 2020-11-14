@@ -18,10 +18,11 @@ public class GameSystem extends Opponent
         {
             System.out.println("Round " + roundCounter);
             player.makeGuess();
-            player.runFinishedGuessTest();
-            if (Arrays.equals(player.getPlayerFinishedGuess(), getOpponentPieces()))
+            if (player.getPlayerFinishedGuess().equals(getOpponentPieces()))
             {
                 System.out.println("YOU WON!");
+                player.getPlayerFinishedGuess().clear();
+                player.getPlayerColourGuess().clear();
                 runGamePlay = false;
                 break;
             }
@@ -29,13 +30,22 @@ public class GameSystem extends Opponent
             int playerGuessOrNot = playerGameInput.nextInt();
             if (playerGuessOrNot == 1)
             {
-                System.out.println("Your guess " + Arrays.toString(player.getPlayerColourGuess()) + " gives following result: ");
+                System.out.println("Your guess " + player.getPlayerColourGuess().toString() + " gives following result: ");
                 roundCounter++;
+                System.out.println("\n");
+                player.getPlayerFinishedGuess().clear();
+                player.getPlayerColourGuess().clear();
+                points.getPlayerSheetCopy().clear();
+
             } else if (playerGuessOrNot == 2)
             {
-                System.out.println("Ok, lets try that again!");
+                player.getPlayerFinishedGuess().clear();
+                player.getPlayerColourGuess().clear();
+                System.out.println("Ok, lets try that again!\n");
             } else
             {
+                player.getPlayerFinishedGuess().clear();
+                player.getPlayerColourGuess().clear();
                 System.out.println("Something went wrong, restarting current round!");
             }
         }

@@ -9,7 +9,7 @@ public class Points
     private String correctPlacement = "I";
     private String correctColour = "II";
     private String[] pointsSheet = {"", "", "", ""};
-    private int [] playerSheetCopy;
+    private LinkedList<Integer> playerSheetCopy = new LinkedList<>();
 
     //Gives the player points based on the user input (their guess)
 
@@ -51,13 +51,13 @@ public class Points
         this.pointsSheet = pointsSheet;
     }
 
-    public int[] getPlayerSheetCopy()
+    public LinkedList<Integer> getPlayerSheetCopy()
     {
 
         return playerSheetCopy;
     }
 
-    public void setPlayerSheetCopy(int[] playerSheetCopy)
+    public void setPlayerSheetCopy(LinkedList<Integer> playerSheetCopy)
     {
 
         this.playerSheetCopy = playerSheetCopy;

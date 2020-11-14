@@ -1,34 +1,35 @@
 package mastermind.game;
+import java.util.LinkedList;
 import java.util.Scanner;
 
 public class Player extends ColourPieces
 {
     Scanner playerGuess = new Scanner(System.in);
-    private int [] playerFinishedGuess = {0,0,0,0};
-    private String [] playerColourGuess = {"", "","",""};
+    private LinkedList<Integer> playerFinishedGuess = new LinkedList<>();
+    private LinkedList<String> playerColourGuess = new LinkedList<>();
 
     //User input sets each turns guesses
     public void makeGuess()
     {
         addToPiecesPile();
         showSortedPiecesList();
-        for (int i = 0; i < playerFinishedGuess.length; i++)
+        for (int i = 0; i <4; i++)
         {
             if (i == 0)
             {
                 System.out.println("\n- - - -");
                 System.out.print("Take a guess at nr " + (i + 1) + ": ");
                 int singlePieceGuess = playerGuess.nextInt();
-                playerFinishedGuess[i] = singlePieceGuess;
-                playerColourGuess[i] = piecesPile.get(singlePieceGuess);
+                playerFinishedGuess.add(singlePieceGuess);
+                playerColourGuess.add(piecesPile.get(singlePieceGuess));
             }
             else
             {
-                System.out.println("\n" + playerColourGuess[0] + " - " + playerColourGuess[1] + " - " + playerColourGuess[2] + " - " + playerColourGuess[3]);
+                System.out.println("\n" + playerColourGuess.toString());
                 System.out.print("Take a guess at nr " + (i + 1) + ": ");
                 int singlePieceGuess = playerGuess.nextInt();
-                playerFinishedGuess[i] = singlePieceGuess;
-                playerColourGuess[i] = piecesPile.get(singlePieceGuess);
+                playerFinishedGuess.add(singlePieceGuess);
+                playerColourGuess.add(piecesPile.get(singlePieceGuess));
             }
         }
     }
@@ -36,54 +37,33 @@ public class Player extends ColourPieces
 
     public void playerContinueWithGuess()
     {
-        System.out.println("\nAre you sure this is your next guess? | 1: YES | 2: NO |");
-        for (String showPlayerColourGuesses : playerColourGuess)
-        {
-            System.out.print(showPlayerColourGuesses + " | ");
-        }
+
+        System.out.println("\n" + playerColourGuess.toString());
+        System.out.println("Are you sure this is your next guess? | 1: YES | 2: NO |");
+        sortedPiecesList.clear();
         System.out.println("\n");
     }
 
-    //Test method for Player bugfix
-    public void runFinishedGuessTest()
-    {
-        for (int showPlayerFinishedGuess: playerFinishedGuess)
-        {
-            System.out.print(showPlayerFinishedGuess + "|");
-        }
 
-        System.out.println("\n");
-    }
-
-    public void runPlayerColourGuessTest()
-    {
-        for (String showPlayerColourGuesses : playerColourGuess)
-        {
-            System.out.print(showPlayerColourGuesses + " | ");
-        }
-        System.out.println("\n");
-
-    }
-
-    public String[] getPlayerColourGuess()
+    public LinkedList<String> getPlayerColourGuess()
     {
 
         return playerColourGuess;
     }
 
-    public void setPlayerColourGuess(String[] playerColourGuess)
+    public void setPlayerColourGuess(LinkedList<String> playerColourGuess)
     {
 
         this.playerColourGuess = playerColourGuess;
     }
 
-    public int[] getPlayerFinishedGuess()
+    public LinkedList<Integer> getPlayerFinishedGuess()
     {
 
         return playerFinishedGuess;
     }
 
-    public void setPlayerFinishedGuess(int[] playerFinishedGuess)
+    public void setPlayerFinishedGuess(LinkedList<Integer> playerFinishedGuess)
     {
 
         this.playerFinishedGuess = playerFinishedGuess;
