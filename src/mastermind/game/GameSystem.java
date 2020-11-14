@@ -13,6 +13,7 @@ public class GameSystem extends Opponent
         makeOpponentChoice();
         runOpponentTest();
         Points points = new Points();
+        points.setOpponentSheetCopy(getOpponentPieces());
         Player player = new Player();
         while (runGamePlay)
         {
@@ -30,7 +31,9 @@ public class GameSystem extends Opponent
             int playerGuessOrNot = playerGameInput.nextInt();
             if (playerGuessOrNot == 1)
             {
+                points.setPlayerSheetCopy(player.getPlayerFinishedGuess());
                 System.out.println("Your guess " + player.getPlayerColourGuess().toString() + " gives following result: ");
+                points.showPointsForGuess();
                 roundCounter++;
                 System.out.println("\n");
                 player.getPlayerFinishedGuess().clear();
