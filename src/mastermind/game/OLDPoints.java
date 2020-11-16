@@ -2,7 +2,7 @@ package mastermind.game;
 import java.lang.reflect.Array;
 import java.util.LinkedList;
 
-public class Points
+public class OLDPoints
 {
 
     //Point system rules

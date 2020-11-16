@@ -1,8 +1,7 @@
 package mastermind.game;
-import java.util.Arrays;
 import java.util.Scanner;
 
-public class GameSystem extends Opponent
+public class OLDGameSystem extends Opponent
 {
     Scanner playerGameInput = new Scanner(System.in);
     boolean runGamePlay = true;
@@ -12,9 +11,9 @@ public class GameSystem extends Opponent
     {
         makeOpponentChoice();
         runOpponentTest();
-        Points points = new Points();
+        OLDPoints points = new OLDPoints();
         points.setOpponentSheetCopy(getOpponentPieces());
-        Player player = new Player();
+        OLDPlayer player = new OLDPlayer();
         while (runGamePlay)
         {
             System.out.println("Round " + roundCounter);

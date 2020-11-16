@@ -1,8 +1,7 @@
 package mastermind.game;
-import java.util.Arrays;
 import java.util.Scanner;
 
-public class Menu
+public class OLDMenu
 {
 
     public static void main(String[] args)
@@ -20,7 +19,7 @@ public class Menu
         switch (playerInputForMenu)
         {
             case 1:
-                    GameSystem gamesystem = new GameSystem();
+                    OLDGameSystem gamesystem = new OLDGameSystem();
                     gamesystem.startGame();
                     break;
                 case 2:
