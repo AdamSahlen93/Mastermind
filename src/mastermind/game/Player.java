@@ -6,7 +6,7 @@ public class Player
 
     Scanner playerGuess = new Scanner(System.in);
     ColourPieces colourPieces = new ColourPieces();
-    private int[] createdPlayerGuess = new int[4];
+    private int[] createdPlayerGuess = {0,0,0,0};
 
 
     public void makeGuess()
@@ -15,28 +15,36 @@ public class Player
         colourPieces.showSortedPiecesList();
         for (int i = 0; i < createdPlayerGuess.length; i++)
         {
-            for (int j = 0; j < createdPlayerGuess.length; j++)
+            for (int j = 0; j<createdPlayerGuess.length; j++)
+            if (createdPlayerGuess[j] == 0)
             {
-                if (createdPlayerGuess[j] >= 1 || createdPlayerGuess[j] <= 8)
-                {
-                    System.out.println(colourPieces.piecesPile.get(j));
-                } else
-                {
-                    System.out.println("-");
-                }
-                System.out.println("Take a guess att nr " + (i + 1) + ": ");
-                createdPlayerGuess[i] = playerGuess.nextInt();
+                System.out.print("-");
+                System.out.print(" | ");
+            } else
+            {
+                System.out.print(colourPieces.piecesPile.get(createdPlayerGuess[j]));
+                System.out.print(" | ");
             }
+            System.out.print("\nTake a guess att nr " + (i + 1) + ": ");
+            createdPlayerGuess[i] = playerGuess.nextInt();
         }
+
+    }
+
+    public void ContinueWithGuess()
+    {
+        for (int j = 0; j<createdPlayerGuess.length; j++)
+        {
+            System.out.print(colourPieces.piecesPile.get(createdPlayerGuess[j]));
+            System.out.print(" | ");
+        }
+        System.out.println("\nAre you sure this is your next guess? | 1: YES | 2: NO |");
     }
 
 
-    public void playerContinueWithGuess()
+    public int[] getCreatedPlayerGuess()
     {
-
-        System.out.println("\n" + createdPlayerGuess.toString());
-        System.out.println("Are you sure this is your next guess? | 1: YES | 2: NO |");
-        System.out.println("\n");
+        return createdPlayerGuess;
     }
 }
 

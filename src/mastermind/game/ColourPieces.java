@@ -22,7 +22,8 @@ class ColourPieces
         {
             String key = entry.getKey().toString();
             String value = entry.getValue();
-            System.out.println(key + ". " + value);
+            System.out.print(key + "." + value + " ");
         }
+        System.out.println("\n");
     }
 }
