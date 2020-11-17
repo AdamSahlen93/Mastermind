@@ -22,5 +22,21 @@ public class Opponent
         }
     }
 
+    public void testForOpponentChoice()
+    {
 
+        System.out.println("Opponent:");
+        for (int i = 0; i < opponentChoice.length; i++)
+        {
+            System.out.print(colourPieces.piecesPile.get(opponentChoice[i]));
+            System.out.print(" | ");
+        }
+        System.out.println("\n");
+    }
+
+    public int[] getOpponentChoice()
+    {
+
+        return opponentChoice;
+    }
 }

@@ -41,7 +41,6 @@ public class Player
         System.out.println("\nAre you sure this is your next guess? | 1: YES | 2: NO |");
     }
 
-
     public int[] getCreatedPlayerGuess()
     {
         return createdPlayerGuess;

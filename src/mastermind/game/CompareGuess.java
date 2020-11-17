@@ -1,5 +1,4 @@
 package mastermind.game;
-import java.lang.reflect.Array;
 import java.util.LinkedList;
 
 public class CompareGuess
@@ -13,7 +12,8 @@ public class CompareGuess
     private LinkedList<Integer> opponentSheetCopy = new LinkedList<>();
     private LinkedList<Integer> playerSheetCopy = new LinkedList<>();
 
-    //Gives the player points based on the user input (their guess)
+
+
 
     public void addPointsForGuess()
     {
@@ -29,7 +29,8 @@ public class CompareGuess
     //Scrambles the points in the pointsSheet and shows it to the player
     public void showPointsForGuess()
     {
-        System.out.print(pointsSheet.toString());
+        System.out.println("Poängen blev: TestPlayerGuess 1: " + playerSheetCopy.get(0) + "TestOpponent 1: " + opponentSheetCopy.get(0));
+        //System.out.print(pointsSheet.toString());
     }
 
     //Getter

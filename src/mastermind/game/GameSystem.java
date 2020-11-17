@@ -14,7 +14,6 @@ public class GameSystem
                 GameplayLoop gameplayLoop = new GameplayLoop();
                 Rules rules = new Rules();
 
-
                 Scanner playerMenuInput = new Scanner(System.in);
                 System.out.println("\n-----Welcome to Mastermind-----\n1. Start a new game against the computer\n2. New to mastermind? - Read the rules here!\n3. Exit the program");
                 int playerInputForMenu = playerMenuInput.nextInt();
