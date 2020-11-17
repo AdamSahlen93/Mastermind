@@ -3,7 +3,6 @@ import java.util.Scanner;
 
 public class GameplayLoop
 {
-    boolean runGamePlay = true;
     int roundCounter = 1;
     Scanner playerInputInGame = new Scanner(System.in);
     CompareGuess compareGuess = new CompareGuess();
@@ -13,9 +12,8 @@ public class GameplayLoop
         Player player = new Player();
         Opponent opponent = new Opponent();
         opponent.makeOpponentChoice();
-        opponent.testForOpponentChoice();
 
-        while (runGamePlay)
+        while (compareGuess.runGameplay)
         {
             System.out.println("Round " + roundCounter);
             player.makeGuess();
@@ -23,6 +21,8 @@ public class GameplayLoop
             boolean thisRound = true;
             while (thisRound)
             {
+                compareGuess.getOpponentSheetCopy().clear();
+                compareGuess.getPlayerSheetCopy().clear();
                 int makeThisGuess = playerInputInGame.nextInt();
                 if (makeThisGuess == 1)
                 {
@@ -34,6 +34,7 @@ public class GameplayLoop
                     compareGuess.addPointsForGuess();
                     compareGuess.showPointsForGuess();
                     thisRound = false;
+
                 } else if (makeThisGuess == 2)
                 {
                     System.out.println("Ok, lets try again");
@@ -51,7 +52,15 @@ public class GameplayLoop
                 }
             }
                 roundCounter++;
+                for (int i = 0; i < player.getCreatedPlayerGuess().length; i++)
+                {
+                     player.getCreatedPlayerGuess()[i] = 0;
+                }
+                compareGuess.getPointsSheet().clear();
             }
+                System.out.println("You won! It took you " + roundCounter + " rounds!");
+
         }
+
     }
 

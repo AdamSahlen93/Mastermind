@@ -1,6 +1,4 @@
 package mastermind.game;
-import java.util.HashMap;
-import java.util.LinkedList;
 import java.util.concurrent.ThreadLocalRandom;
 
 
@@ -22,7 +20,7 @@ public class Opponent
         }
     }
 
-    public void testForOpponentChoice()
+    /*public void testForOpponentChoice()
     {
 
         System.out.println("Opponent:");
@@ -32,7 +30,7 @@ public class Opponent
             System.out.print(" | ");
         }
         System.out.println("\n");
-    }
+    }*/
 
     public int[] getOpponentChoice()
     {

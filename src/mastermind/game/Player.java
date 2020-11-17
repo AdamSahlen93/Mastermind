@@ -33,6 +33,7 @@ public class Player
 
     public void ContinueWithGuess()
     {
+        System.out.println("\n");
         for (int j = 0; j<createdPlayerGuess.length; j++)
         {
             System.out.print(colourPieces.piecesPile.get(createdPlayerGuess[j]));

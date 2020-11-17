@@ -6,9 +6,10 @@ public class CompareGuess
 
     //Point system rules
     //From the user input, a point system is used (Correct Colour or Correct Placement)
-    private String correctPlacement = "I";
-    private String correctColour = "II";
-    private LinkedList<String> pointsSheet = new LinkedList<>();
+    private int correctColour = 1;
+    private int correctPlacement = 2;
+    boolean runGameplay = true;
+    private LinkedList<Integer> pointsSheet = new LinkedList<>();
     private LinkedList<Integer> opponentSheetCopy = new LinkedList<>();
     private LinkedList<Integer> playerSheetCopy = new LinkedList<>();
 
@@ -17,44 +18,68 @@ public class CompareGuess
 
     public void addPointsForGuess()
     {
-        for (int i = 0; i<4; i++)
+        for (int i = 0; i<opponentSheetCopy.size();i++)
         {
-            if (playerSheetCopy.get(i) == opponentSheetCopy.get(i))
+            if (playerSheetCopy.get(i).equals(opponentSheetCopy.get(i)))
             {
-                pointsSheet.add(i,correctColour);
+                pointsSheet.addFirst(getCorrectPlacement());
+                playerSheetCopy.set(i,0);
+                opponentSheetCopy.set(i,0);
             }
+
+        }
+
+        for (int i = 0; i<playerSheetCopy.size(); i++)
+        {
+          if (playerSheetCopy.get(i) != 0)
+          {
+              for (int j = 0; j<opponentSheetCopy.size(); j++)
+              {
+                  if (playerSheetCopy.get(i).equals(opponentSheetCopy.get(j)))
+                  {
+                      playerSheetCopy.set(i,0);
+                      opponentSheetCopy.set(j,0);
+                      pointsSheet.addFirst(getCorrectColour());
+                  }
+
+              }
+          }
+
         }
     }
 
     //Scrambles the points in the pointsSheet and shows it to the player
     public void showPointsForGuess()
     {
-        System.out.println("Poängen blev: TestPlayerGuess 1: " + playerSheetCopy.get(0) + "TestOpponent 1: " + opponentSheetCopy.get(0));
-        //System.out.print(pointsSheet.toString());
+        System.out.println("This gives you: " + pointsSheet.toString());
+        System.out.println("\n");
+        if (opponentSheetCopy.equals(playerSheetCopy))
+        {
+            runGameplay = false;
+        }
     }
 
     //Getter
-    public String getCorrectPlacement()
+    public int getCorrectPlacement()
     {
-
         return correctPlacement;
     }
 
     //Getter
-    public String getCorrectColour()
+    public int getCorrectColour()
     {
 
         return correctColour;
     }
 
     //Getter & Setter
-    public LinkedList<String> getPointsSheet()
+    public LinkedList<Integer> getPointsSheet()
     {
 
         return pointsSheet;
     }
 
-    public void setPointsSheet(LinkedList<String> pointsSheet)
+    public void setPointsSheet(LinkedList<Integer> pointsSheet)
     {
 
         this.pointsSheet = pointsSheet;
