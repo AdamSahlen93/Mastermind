@@ -23,24 +23,10 @@ public class GameSystem
             case 1:
                 System.out.println("Starting Game!");
             case 2:
-                boolean showMastermindRules = true;
-
-                while (showMastermindRules)
+                while (rules.giveInfoToGameSystem)
                 {
-                    rules.runRules();
-                    System.out.println("\nTo go back - type EXIT");
-                    String handleRulesMenu = playerMenuInput.nextLine();
-                    try
-                    {
-                        if (handleRulesMenu.equals("Exit") || handleRulesMenu.equals("EXIT") || handleRulesMenu.equals("exit"))
-                        {
-                            showMastermindRules = false;
-                        }
-                    }
-                    catch (Exception e)
-                    {
-                        System.out.println("Something went wrong, please try again!");
-                    }
+                    rules.showTheRules();
+                    rules.handleTheRules();
                 }
                 break;
                 case 3:

@@ -4,7 +4,7 @@ import java.util.LinkedList;
 import java.util.concurrent.ThreadLocalRandom;
 
 
-public abstract class Opponent
+public class Opponent
 {
     //Array which will hold the random generated pieces of the Opponent
     private int [] opponentChoice = new int [4];
