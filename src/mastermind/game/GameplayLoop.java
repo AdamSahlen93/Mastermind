@@ -1,20 +1,21 @@
 package mastermind.game;
-import java.util.Scanner;
 
 public class GameplayLoop
 {
-    Scanner playerGameInput = new Scanner(System.in);
+
     boolean runGamePlay = true;
     int roundCounter = 1;
 
+
     public void startGame()
     {
+        Player player = new Player();
         while (runGamePlay)
         {
             System.out.println("Round " + roundCounter);
+            player.makeGuess();
+            player.playerContinueWithGuess();
             roundCounter++;
-            System.out.println("Round " + roundCounter);
-            runGamePlay = false;
 
             }
         }

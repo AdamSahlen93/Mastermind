@@ -1,22 +1,18 @@
 package mastermind.game;
-import java.util.LinkedList;
 import java.util.Scanner;
 
-public class OLDPlayer extends ColourPieces
+public class Player
 {
 
     Scanner playerGuess = new Scanner(System.in);
     ColourPieces colourPieces = new ColourPieces();
     private int[] createdPlayerGuess = new int[4];
 
-    //private LinkedList<Integer> playerFinishedGuess = new LinkedList<>();
-    //private LinkedList<String> playerColourGuess = new LinkedList<>();
 
     public void makeGuess()
     {
-
         colourPieces.addToPiecesPile();
-        showSortedPiecesList();
+        colourPieces.showSortedPiecesList();
         for (int i = 0; i < createdPlayerGuess.length; i++)
         {
             for (int j = 0; j < createdPlayerGuess.length; j++)
