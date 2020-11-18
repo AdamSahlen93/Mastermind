@@ -1,9 +1,12 @@
 package mastermind.game;
+import java.util.LinkedList;
 import java.util.Scanner;
 
 public class GameplayLoop
 {
     int roundCounter = 1;
+    LinkedList<String> previousGuess = new LinkedList<>();
+    LinkedList<String> previousPoints = new LinkedList<>();
     Scanner playerInputInGame = new Scanner(System.in);
     CompareGuess compareGuess = new CompareGuess();
 
@@ -15,6 +18,22 @@ public class GameplayLoop
 
         while (compareGuess.runGameplay)
         {
+            System.out.println("----------------------------------------------------------------------------");
+            if (roundCounter > 1)
+            {
+                System.out.println("\n                           Previous guesses");
+                for (int i = 0; i<previousGuess.size(); i++)
+                {
+                    String result = String.format("%s\t|\t%s\t|\t\t%s","Result for round " + (i+1),previousGuess.get(i),previousPoints.get(i));
+                    System.out.println(result);
+                }
+                System.out.println("\n");
+            }
+            else
+            {
+                System.out.println("No guesses yet - make your first guess!");
+            }
+            System.out.println("----------------------------------------------------------------------------");
             System.out.println("Round " + roundCounter);
             player.makeGuess();
             player.ContinueWithGuess();
@@ -33,6 +52,8 @@ public class GameplayLoop
                     }
                     compareGuess.addPointsForGuess();
                     compareGuess.showPointsForGuess();
+                    previousGuess.addLast(player.colourPieces.piecesPile.get(player.getCreatedPlayerGuess()[0]) + "," + player.colourPieces.piecesPile.get(player.getCreatedPlayerGuess()[1]) + "," + player.colourPieces.piecesPile.get(player.getCreatedPlayerGuess()[2]) + ","  + player.colourPieces.piecesPile.get(player.getCreatedPlayerGuess()[3]));
+                    previousPoints.addLast(compareGuess.getPointsSheet().toString());
                     thisRound = false;
 
                 } else if (makeThisGuess == 2)
