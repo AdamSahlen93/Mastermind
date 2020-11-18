@@ -18,7 +18,7 @@ public class Player
             for (int j = 0; j<createdPlayerGuess.length; j++)
             if (createdPlayerGuess[j] == 0)
             {
-                System.out.print("-");
+                System.out.print("X");
                 System.out.print(" | ");
             } else
             {
