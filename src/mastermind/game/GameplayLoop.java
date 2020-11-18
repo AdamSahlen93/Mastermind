@@ -52,7 +52,7 @@ public class GameplayLoop extends ConsoleSystem
                     compareGuess.addPointsForGuess();
                     previousGuess.addLast(player.colourPieces.boardPiecesPile.get(player.getCreatedPlayerGuess()[0]) + "," + player.colourPieces.boardPiecesPile.get(player.getCreatedPlayerGuess()[1]) + "," + player.colourPieces.boardPiecesPile.get(player.getCreatedPlayerGuess()[2]) + ","  + player.colourPieces.boardPiecesPile.get(player.getCreatedPlayerGuess()[3]));
                     previousPoints.addLast(compareGuess.getPointsSheet().toString());
-                    clearScreen();
+                    //clearScreen();
                     thisRound = false;
 
                 } else if (makeThisGuess == 2)
