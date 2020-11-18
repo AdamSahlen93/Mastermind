@@ -15,17 +15,20 @@ public class Player
         colourPieces.showSortedPiecesList();
         for (int i = 0; i < createdPlayerGuess.length; i++)
         {
+            String result = String.format("%s %s\t\t%s","Take a guess att nr",(i + 1)," | ");
+            System.out.print(result);
             for (int j = 0; j<createdPlayerGuess.length; j++)
-            if (createdPlayerGuess[j] == 0)
-            {
-                System.out.print("X");
-                System.out.print(" | ");
-            } else
-            {
-                System.out.print(colourPieces.piecesPile.get(createdPlayerGuess[j]));
-                System.out.print(" | ");
-            }
-            System.out.print("\nTake a guess att nr " + (i + 1) + ": ");
+                if (createdPlayerGuess[j] == 0)
+                {
+
+                    System.out.print("X");
+                    System.out.print(" | ");
+                } else
+                {
+                    System.out.print(colourPieces.piecesPile.get(createdPlayerGuess[j]));
+                    System.out.print(" | ");
+                }
+            System.out.println(" ");
             createdPlayerGuess[i] = playerGuess.nextInt();
         }
 

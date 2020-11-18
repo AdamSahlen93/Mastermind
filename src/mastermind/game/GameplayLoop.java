@@ -21,10 +21,10 @@ public class GameplayLoop
             System.out.println("----------------------------------------------------------------------------");
             if (roundCounter > 1)
             {
-                System.out.println("\n                           Previous guesses");
+                System.out.println("\n                                Previous guesses");
                 for (int i = 0; i<previousGuess.size(); i++)
                 {
-                    String result = String.format("%s\t|\t%s\t|\t\t%s","Result for round " + (i+1),previousGuess.get(i),previousPoints.get(i));
+                    String result = String.format("%s\t|\t\t%s\t\t\t|\t%s","Result for round " + (i+1),previousGuess.get(i),previousPoints.get(i));
                     System.out.println(result);
                 }
                 System.out.println("\n");
