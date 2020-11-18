@@ -12,16 +12,17 @@ public class Player
     public void makeGuess()
     {
         colourPieces.addToPiecesPile();
+        colourPieces.fixCleanBoardList();
         colourPieces.showSortedPiecesList();
         for (int i = 0; i < createdPlayerGuess.length; i++)
         {
-            String result = String.format("%s %s\t\t%s","Take a guess att nr",(i + 1)," | ");
+            String result = String.format("%s %s\t\t\t%s","Take a guess att nr",(i + 1)," | ");
             System.out.print(result);
             for (int j = 0; j<createdPlayerGuess.length; j++)
                 if (createdPlayerGuess[j] == 0)
                 {
 
-                    System.out.print("X");
+                    System.out.print("-");
                     System.out.print(" | ");
                 } else
                 {
@@ -36,13 +37,13 @@ public class Player
 
     public void ContinueWithGuess()
     {
-        System.out.println("\n");
+        System.out.print("Make this guess? 1: YES 2: NO\t |");
         for (int j = 0; j<createdPlayerGuess.length; j++)
         {
             System.out.print(colourPieces.piecesPile.get(createdPlayerGuess[j]));
             System.out.print(" | ");
         }
-        System.out.println("\nAre you sure this is your next guess? | 1: YES | 2: NO |");
+
     }
 
     public int[] getCreatedPlayerGuess()

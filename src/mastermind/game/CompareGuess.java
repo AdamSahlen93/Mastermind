@@ -3,11 +3,8 @@ import java.util.LinkedList;
 
 public class CompareGuess
 {
-
-    //Point system rules
-    //From the user input, a point system is used (Correct Colour or Correct Placement)
-    private String correctColour = " - ";
-    private String correctPlacement = " = ";
+    private String correctColour = "I";
+    private String correctPlacement = "X";
     boolean runGameplay = true;
     private LinkedList<String> pointsSheet = new LinkedList<>();
     private LinkedList<Integer> opponentSheetCopy = new LinkedList<>();
@@ -52,21 +49,6 @@ public class CompareGuess
                     }
                 }
             }
-        }
-    }
-
-    //Scrambles the points in the pointsSheet and shows it to the player
-    public void showPointsForGuess()
-    {
-        /*
-        System.out.println("Opponent: " + opponentSheetCopy.toString());
-        System.out.println("Player: " + playerSheetCopy.toString());
-        System.out.println("Points: " + pointsSheet.toString());*/
-        System.out.println("This gives you following result: " + pointsSheet.toString());
-        System.out.println("\n");
-        if (opponentSheetCopy.equals(playerSheetCopy))
-        {
-            runGameplay = false;
         }
     }
 

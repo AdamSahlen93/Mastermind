@@ -2,7 +2,7 @@ package mastermind.game;
 import java.util.LinkedList;
 import java.util.Scanner;
 
-public class GameplayLoop
+public class GameplayLoop extends ConsoleSystem
 {
     int roundCounter = 1;
     LinkedList<String> previousGuess = new LinkedList<>();
@@ -18,22 +18,21 @@ public class GameplayLoop
 
         while (compareGuess.runGameplay)
         {
-            System.out.println("----------------------------------------------------------------------------");
+            System.out.println("\n----------------------------------------------------------------------------");
             if (roundCounter > 1)
             {
-                System.out.println("\n                                Previous guesses");
+                System.out.println("\t\t\t\t\t\t\t\tMastermind board");
                 for (int i = 0; i<previousGuess.size(); i++)
                 {
-                    String result = String.format("%s\t|\t\t%s\t\t\t|\t%s","Result for round " + (i+1),previousGuess.get(i),previousPoints.get(i));
+                    String result = String.format("%s\t \t%s\t%s\t%s","Result for round " + (i+1),previousGuess.get(i),"",previousPoints.get(i));
                     System.out.println(result);
                 }
-                System.out.println("\n");
             }
             else
             {
-                System.out.println("No guesses yet - make your first guess!");
+                System.out.println("\t\t\t\t\t\t\t\tMastermind board");
             }
-            System.out.println("----------------------------------------------------------------------------");
+            System.out.println("----------------------------------------------------------------------------\n");
             System.out.println("Round " + roundCounter);
             player.makeGuess();
             player.ContinueWithGuess();
@@ -51,9 +50,9 @@ public class GameplayLoop
                         compareGuess.getPlayerSheetCopy().addLast(player.getCreatedPlayerGuess()[i]);
                     }
                     compareGuess.addPointsForGuess();
-                    compareGuess.showPointsForGuess();
-                    previousGuess.addLast(player.colourPieces.piecesPile.get(player.getCreatedPlayerGuess()[0]) + "," + player.colourPieces.piecesPile.get(player.getCreatedPlayerGuess()[1]) + "," + player.colourPieces.piecesPile.get(player.getCreatedPlayerGuess()[2]) + ","  + player.colourPieces.piecesPile.get(player.getCreatedPlayerGuess()[3]));
+                    previousGuess.addLast(player.colourPieces.boardPiecesPile.get(player.getCreatedPlayerGuess()[0]) + "," + player.colourPieces.boardPiecesPile.get(player.getCreatedPlayerGuess()[1]) + "," + player.colourPieces.boardPiecesPile.get(player.getCreatedPlayerGuess()[2]) + ","  + player.colourPieces.boardPiecesPile.get(player.getCreatedPlayerGuess()[3]));
                     previousPoints.addLast(compareGuess.getPointsSheet().toString());
+                    clearScreen();
                     thisRound = false;
 
                 } else if (makeThisGuess == 2)
@@ -79,7 +78,9 @@ public class GameplayLoop
                 }
                 compareGuess.getPointsSheet().clear();
             }
-                System.out.println("You won! It took you " + roundCounter + " rounds!");
+        System.out.println("---------------------------------------------\n");
+        System.out.println("YOU WON! It took you " + roundCounter + " rounds!");
+        System.out.println("\n---------------------------------------------");
 
         }
 

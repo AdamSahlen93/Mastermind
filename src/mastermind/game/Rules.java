@@ -9,15 +9,16 @@ public class Rules
     public void showTheRules()
     {
         System.out.println("\n");
-        System.out.println("-----Rules-----");
+        System.out.println("--------------------------------------------------Rules-------------------------------------------------");
         System.out.println("1. The Opponent will choose four colours from the pile and place them in their \"nest\"");
         System.out.println("2. The Opponent can choose the same colour more than once!");
-        System.out.println("3. For every round, the Player will make a guess containing four colours in the order that the Player thinks the Opponent has put them in their nest");
+        System.out.println("3. For every round, the Player will make a guess containing four colours in the order that the Player\n   thinks the Opponent has put them in their nest");
         System.out.println("4. After making the guess, the Player will receive feedback based on colour and placement of their guess");
-        System.out.println("5. The - symbol means that one of the pieces is of the right colour but placed in the wrong spot");
-        System.out.println("   The = symbol means that one of the pieces is of the right colour and placed in the right spot");
-        System.out.println("6. Based on  this information, the Player will make a new guess until the guess matches the Opponents nest");
-        System.out.println("7. The game will end and the Player is given a score of how many rounds it took to complete the game");
+        System.out.println("5. This feedback can be seen in the Mastermind board window");
+        System.out.println("6. The I symbol means that one of the pieces is of the right colour but placed in the wrong spot");
+        System.out.println("   The X symbol means that one of the pieces is of the right colour and placed in the right spot");
+        System.out.println("7. Based on  this information, the Player will make a new guess until the guess matches the Opponents nest");
+        System.out.println("8. The game will end and the Player is given a score of how many rounds it took to complete the game");
         System.out.println("\n");
         System.out.println("To exit the Rules menu - type EXIT");
     }
