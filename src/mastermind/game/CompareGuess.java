@@ -11,8 +11,6 @@ public class CompareGuess
     private LinkedList<Integer> playerSheetCopy = new LinkedList<>();
 
 
-
-
     public void addPointsForGuess()
     {
         /*System.out.println("Opponent: " + opponentSheetCopy.toString());
@@ -49,6 +47,10 @@ public class CompareGuess
                     }
                 }
             }
+        }
+        if (playerSheetCopy.equals(opponentSheetCopy))
+        {
+            runGameplay = false;
         }
     }
 
